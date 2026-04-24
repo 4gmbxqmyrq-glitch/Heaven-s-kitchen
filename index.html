@@ -6,21 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap');
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
+  background: #fff6ee; /* pale orange */
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* NAVBAR */
@@ -28,102 +24,84 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 15px 30px;
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eee;
   z-index: 1000;
 }
 
 nav .logo {
   font-family: 'Playfair Display', serif;
   font-size: 20px;
-  letter-spacing: 1px;
 }
 
 nav a {
-  color: #eee;
+  color: #444;
   margin-left: 20px;
   text-decoration: none;
-  font-size: 14px;
+  font-weight: 500;
 }
 
 /* HERO */
 header {
-  height: 100vh;
-  background: url('menu.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
-}
-
-.hero {
-  position: relative;
+  padding-top: 120px;
+  padding-bottom: 80px;
   text-align: center;
-  max-width: 700px;
-  padding: 20px;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 52px;
+  font-size: 48px;
   margin: 0;
 }
 
 .hero p {
   margin: 15px 0;
-  color: #ccc;
+  color: #666;
 }
 
 .btn {
-  padding: 14px 28px;
-  background: #d4af37;
-  color: black;
+  padding: 12px 25px;
+  background: #f4a261;
   border: none;
-  font-weight: 500;
-  border-radius: 4px;
+  color: white;
+  border-radius: 6px;
   margin: 10px;
 }
 
 /* SECTIONS */
 .section {
-  padding: 100px 20px;
-  max-width: 1100px;
+  padding: 80px 20px;
+  max-width: 1000px;
   margin: auto;
-}
-
-/* SPLIT */
-.split {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-}
-
-.split img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-}
-
-.split .text {
-  flex: 1;
 }
 
 /* MENU */
 .menu-img {
   width: 100%;
   border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 /* CONTACT */
@@ -134,18 +112,19 @@ header::after {
 .contact a {
   display: inline-block;
   margin: 10px;
-  padding: 14px 24px;
-  border: 1px solid #555;
-  color: white;
+  padding: 12px 20px;
+  background: white;
+  border: 1px solid #ddd;
+  color: #333;
   text-decoration: none;
+  border-radius: 6px;
 }
 
 /* FOOTER */
 footer {
-  padding: 40px;
+  padding: 30px;
   text-align: center;
   color: #777;
-  border-top: 1px solid #222;
 }
 </style>
 </head>
@@ -175,11 +154,24 @@ footer {
   <img src="menu.jpg" class="menu-img">
 </section>
 
-<section id="about" class="section split">
-  <img src="menu.jpg">
-  <div class="text">
-    <h2>Our Story</h2>
-    <p>At Heaven’s Kitchen, we craft every dish with intention. Inspired by global flavors and grounded in fresh ingredients, our menu delivers a refined yet approachable dining experience.</p>
+<section id="about" class="section">
+  <h2>About Us</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Our Story</h3>
+      <p>At Heaven’s Kitchen, we craft every dish with intention. Inspired by global flavors and grounded in fresh ingredients, our menu delivers a refined yet approachable dining experience.</p>
+    </div>
+
+    <div class="card">
+      <h3>Hours</h3>
+      <p>Open daily<br>11am – 10pm</p>
+    </div>
+
+    <div class="card">
+      <h3>Location</h3>
+      <p>Downtown • Easy parking • Great vibes</p>
+    </div>
   </div>
 </section>
 
