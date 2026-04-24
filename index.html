@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #fff6ee; /* pale orange */
+  background: #fff6ee;
   color: #333;
 }
 
@@ -24,11 +24,11 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 15px 25px;
+  padding: 15px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #eee;
   z-index: 1000;
@@ -41,9 +41,10 @@ nav .logo {
 
 nav a {
   color: #444;
-  margin-left: 20px;
+  margin-left: 12px;
   text-decoration: none;
   font-weight: 500;
+  font-size: 14px;
 }
 
 /* HERO */
@@ -55,7 +56,7 @@ header {
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
+  font-size: 46px;
   margin: 0;
 }
 
@@ -65,17 +66,18 @@ header {
 }
 
 .btn {
-  padding: 12px 25px;
+  padding: 12px 24px;
   background: #f4a261;
   border: none;
   color: white;
   border-radius: 6px;
-  margin: 10px;
+  margin: 8px;
+  font-size: 14px;
 }
 
 /* SECTIONS */
 .section {
-  padding: 80px 20px;
+  padding: 70px 20px;
   max-width: 1000px;
   margin: auto;
 }
@@ -85,14 +87,14 @@ header {
   width: 100%;
   border-radius: 12px;
   margin-top: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* CARDS */
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 18px;
 }
 
 .card {
@@ -101,7 +103,7 @@ header {
   border-radius: 10px;
   flex: 1;
   min-width: 250px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
 /* CONTACT */
@@ -112,19 +114,38 @@ header {
 .contact a {
   display: inline-block;
   margin: 10px;
-  padding: 12px 20px;
+  padding: 12px 18px;
   background: white;
   border: 1px solid #ddd;
   color: #333;
   text-decoration: none;
   border-radius: 6px;
+  font-size: 14px;
 }
 
 /* FOOTER */
 footer {
-  padding: 30px;
+  padding: 25px;
   text-align: center;
   color: #777;
+}
+
+/* ✅ MOBILE FIX (this solves the cutoff issue) */
+@media (max-width: 430px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav div:last-child {
+    margin-top: 5px;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 13px;
+  }
 }
 </style>
 </head>
@@ -160,25 +181,25 @@ footer {
   <div class="cards">
     <div class="card">
       <h3>Our Story</h3>
-      <p>At Heaven’s Kitchen, we craft every dish with intention. Inspired by global flavors and grounded in fresh ingredients, our menu delivers a refined yet approachable dining experience.</p>
+      <p>At Heaven’s Kitchen, we craft every dish with love. Inspired by classic favorites and grounded in kindness, you can expect a warm welcome every time. Our menu delivers a refined yet approachable dining experience.</p>
     </div>
 
     <div class="card">
       <h3>Hours</h3>
-      <p>Open daily<br>11am – 10pm</p>
+      <p>Open daily<br>7am-11:30am</p>
     </div>
 
     <div class="card">
       <h3>Location</h3>
-      <p>Downtown • Easy parking • Great vibes</p>
+      <p> peaceful• Easy parking • cozy atmosphere</p>
     </div>
   </div>
 </section>
 
 <section id="contact" class="section contact">
   <h2>Visit Us</h2>
-  <a href="tel:1234567890">Call</a>
-  <a href="https://maps.google.com">Directions</a>
+  <a href="tel:+1 534-626-8076">Call</a>
+  <a href="https://maps.app.goo.gl/QcAGgrY2x6gFxa2Z6?g_st=ic">Directions</a>
 </section>
 
 <footer>
@@ -187,7 +208,7 @@ footer {
 
 <script>
 function showMessage() {
-  alert("Reservations coming soon!");
+  alert("Reach out to Jonah or Emilie to plan your visit :)");
 }
 
 function scrollToMenu() {
