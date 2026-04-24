@@ -1,130 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Heaven’s Kitchen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Heaven’s Kitchen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      background: #111;
-      color: #fff;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap');
 
-    header {
-      background: url('menu.jpg') center/cover no-repeat;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+}
 
-    h1 {
-      font-size: 40px;
-      margin: 0;
-      letter-spacing: 2px;
-    }
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
 
-    .tagline {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #ddd;
-    }
+nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
 
-    .btn {
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #e63946;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 5px;
-    }
+nav a {
+  color: #eee;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
+/* HERO */
+header {
+  height: 100vh;
+  background: url('menu.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-    .menu-image {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
 
-    .card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 500px;
-    }
+.hero {
+  position: relative;
+  text-align: center;
+  max-width: 700px;
+  padding: 20px;
+}
 
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #aaa;
-    }
-  </style>
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  margin: 0;
+}
+
+.hero p {
+  margin: 15px 0;
+  color: #ccc;
+}
+
+.btn {
+  padding: 14px 28px;
+  background: #d4af37;
+  color: black;
+  border: none;
+  font-weight: 500;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* SPLIT */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.split img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.split .text {
+  flex: 1;
+}
+
+/* MENU */
+.menu-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 24px;
+  border: 1px solid #555;
+  color: white;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #222;
+}
+</style>
 </head>
 
 <body>
 
+<nav>
+  <div class="logo">Heaven’s Kitchen</div>
+  <div>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <header>
-  <div class="hero-content">
+  <div class="hero">
     <h1>Heaven’s Kitchen</h1>
-    <p class="tagline">Fresh • Bold • Made with Love</p>
-    <button class="btn" onclick="showMessage()">Order Now</button>
+    <p>Elevated dining. Bold flavor. Unforgettable experience.</p>
+    <button class="btn" onclick="showMessage()">Reserve</button>
+    <button class="btn" onclick="scrollToMenu()">View Menu</button>
   </div>
 </header>
 
-<section class="section">
+<section id="menu" class="section">
   <h2>Our Menu</h2>
-  <img src="menu.jpg" alt="Menu" class="menu-image">
+  <img src="menu.jpg" class="menu-img">
 </section>
 
-<section class="section">
-  <div class="card">
-    <h2>About Us</h2>
-    <p>Serving you since 2023. We bring bold flavors and fresh ingredients together to create unforgettable meals.</p>
+<section id="about" class="section split">
+  <img src="menu.jpg">
+  <div class="text">
+    <h2>Our Story</h2>
+    <p>At Heaven’s Kitchen, we craft every dish with intention. Inspired by global flavors and grounded in fresh ingredients, our menu delivers a refined yet approachable dining experience.</p>
   </div>
+</section>
 
-  <div class="card">
-    <h2>Hours</h2>
-    <p>Mon–Sun: 11am – 10pm</p>
-  </div>
+<section id="contact" class="section contact">
+  <h2>Visit Us</h2>
+  <a href="tel:1234567890">Call</a>
+  <a href="https://maps.google.com">Directions</a>
 </section>
 
 <footer>
-  <p>© 2026 Heaven’s Kitchen • All Rights Reserved</p>
+  <p>© 2026 Heaven’s Kitchen</p>
 </footer>
 
 <script>
-  function showMessage() {
-    alert("We’re excited to serve you!");
-  }
+function showMessage() {
+  alert("Reservations coming soon!");
+}
+
+function scrollToMenu() {
+  document.getElementById("menu").scrollIntoView({behavior:"smooth"});
+}
 </script>
 
 </body>
